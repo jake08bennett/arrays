@@ -36,6 +36,15 @@ module Arrays
 		string += word 
 		string
 	end
+	
+	def same_ends?(ary , n)
+		for i in 0...n
+		 	if ary[i]!= ary[ary.length-n+i]
+		 		return false
+		 	end
+		 end
+		return true 
+	end
 
 
 	def starry(string)
