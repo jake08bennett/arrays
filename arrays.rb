@@ -47,20 +47,22 @@ module Arrays
 	end
 
 
-	def starry(string)
-		string_array = []
-		string = string.downcase
-		(0...string.length).each do |n|
-			if string[n] == "*"
-				string_array.push(string[n-1] + string[n] + string[n + 1])
+	def starry?(str)
+		result = str.split("")
+		count = 0
+		for i in 1..result.length
+			if i - 1 == 0 || i == result.length
+				next
+			else
+				if result[i-2] == result[i]
+					count = count + 1
+				else
+					next
+				end
 			end
+			puts
 		end
-		(0...string_array.length).each do |n|
-			if(string_array[n][0] != string_array[n][2])
-				return false
-			end
-		end
-		true
+		count == result.length - 2 ? true : false
 	end
 
 	def plus_it(string, token)
