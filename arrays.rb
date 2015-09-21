@@ -37,17 +37,6 @@ module Arrays
 		string
 	end
 
-	def same_ends?(array, range)
-		string1 = ""
-		string2 = ""
-		(0...range).each do |n|
-			string1 += array[n].to_s
-		end
-		(array.length - range...array.length).each do |n|
-			string2 += array[n].to_s
-		end
-		string1 == string2
-	end
 
 	def starry(string)
 		string_array = []
